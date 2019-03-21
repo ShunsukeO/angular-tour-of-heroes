@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; // Inputのインポートを追記
+import { Hero } from '../hero'; // Heroクラスをインポート
 
 @Component({
   selector: 'app-hero-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+
+  @Input() hero: Hero; // Inputデコレータを付けたheroプロパティを定義
 
   constructor() { }
 
