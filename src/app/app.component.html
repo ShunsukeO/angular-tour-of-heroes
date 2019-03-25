@@ -1,6 +1,11 @@
 <!-- app.component.tsで定義しているtitle -->
 <h1>{{ title }}</h1>
-<!-- heroesコンポーネントを表示 -->
-<app-heroes></app-heroes>
+<!-- nav要素を追加 -->
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<!-- ルーティングされたビュー -->
+<router-outlet></router-outlet>
 <!-- messagesコンポーネントを表示 -->
 <app-messages></app-messages>

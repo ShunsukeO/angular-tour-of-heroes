@@ -9,15 +9,7 @@ import { HeroService } from '../hero.service'; // HEROESのインポートの代
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-
-  // heroes = HEROES;
   heroes: Hero[]; // 後々HEROESを格納するためのプロパティとして定義
-
-  selectedHero: Hero; // 選択されたHeroを格納するため
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
 
   constructor(private heroService: HeroService) { }
 
@@ -26,9 +18,6 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    // this.heroes = this.heroService.getHeroes();
-    // 上で新たに定義したheroesに、hero.service.tsのgetHeroesでHEROESを取得
-
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
