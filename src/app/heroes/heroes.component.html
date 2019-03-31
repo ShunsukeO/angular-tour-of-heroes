@@ -1,3 +1,13 @@
+<div>
+  <label>Hero name:
+    <input #heroname />
+  </label>
+  <!-- (click) 入力値をadd()に渡したあと、入力をクリアする -->
+  <button (click)="add(heroname.value); heroname.value=''">
+    add
+  </button>
+</div>
+
 <h2>My Heroes</h2>
 
 <ul class="heroes">
@@ -5,7 +15,7 @@
     <a routerLink="/detail/{{ hero.id }}">
       <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
   </li>
 </ul>
-
-<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
